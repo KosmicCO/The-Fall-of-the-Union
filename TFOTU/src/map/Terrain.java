@@ -5,6 +5,8 @@
  */
 package map;
 
+import map.tiles.Tile;
+
 /**
  *
  * @author Kosmic
