@@ -5,6 +5,7 @@
  */
 package entities;
 
+import citystate.Allegience;
 import util.RegisteredEntity;
 
 /**
@@ -14,14 +15,17 @@ import util.RegisteredEntity;
 public class Citizen extends RegisteredEntity{
 
     private int gender; //0 undef, 1 male, 2 female
-    //allegience
-    //role
+    private Allegience alle;
     
+    public Citizen(int gender, Allegience al){
+        
+        this.gender = gender;
+        alle = al;
+    }
     
     @Override
     protected void createInner() {
 
         
     }
-    
 }

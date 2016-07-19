@@ -13,20 +13,18 @@ import org.newdawn.slick.Color;
  */
 public class Tile {
     
-    private String tileID;
-    private double speed;
-    private int blockingLevel;
-    private boolean opaque;
-    private boolean solid;
-    private Color color;
+    protected String tileID;
+    protected double speed;
+    protected int blockingLevel;
+    protected boolean opaque;
+    protected Color color;
     
-    public Tile(String id, double speed, int bLevel, boolean opaque, boolean solid, Color color){
+    public Tile(String id, double speed, int bLevel, boolean opaque, Color color){
         
         tileID = id;
         this.speed = speed;
         blockingLevel = bLevel;
         this.opaque = opaque;
-        this.solid = solid;
         this.color = color;
     }
 
@@ -48,11 +46,6 @@ public class Tile {
     public boolean isOpaque() {
         
         return opaque;
-    }
-
-    public boolean isSolid() {
-        
-        return solid;
     }
 
     public Color getColor() {

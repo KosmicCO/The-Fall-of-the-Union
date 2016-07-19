@@ -13,21 +13,16 @@ import org.newdawn.slick.Color;
  */
 public class TileDestruct extends Tile{
     
-    private double maxHP;
-    private double hp;
-    private Tile deathTile;
+    protected double maxHP;
+    protected double hp;
+    protected Tile deathTile;
     
-    public TileDestruct(String id, double speed, double maxHP, double hp, int bLevel, boolean opaque, boolean solid, Color color, Tile deathTile) {
+    public TileDestruct(String id, double speed, double maxHP, int bLevel, boolean opaque, Color color, Tile deathTile) {
         
-        super(id, speed, bLevel, opaque, solid, color);
+        super(id, speed, bLevel, opaque, color);
         this.maxHP = maxHP;
-        this.hp = hp;
+        this.hp = maxHP;
         this.deathTile = deathTile;
-    }
-    
-    public TileDestruct(String id, double speed, double maxHP, int bLevel, boolean opaque, boolean solid, Color color, Tile deathTile) {
-        
-        this(id, speed, maxHP, maxHP, bLevel, opaque, solid, color, deathTile);
     }
     
     public double takeDamage(double damage){
@@ -47,5 +42,25 @@ public class TileDestruct extends Tile{
         }
         
         return damage;
+    }
+
+    public void setHP(double hp) {
+        
+        this.hp = hp;
+    }
+
+    public double getMaxHP() {
+        
+        return maxHP;
+    }
+
+    public double getHp() {
+        
+        return hp;
+    }
+
+    public Tile getDeathTile() {
+        
+        return deathTile;
     }
 }

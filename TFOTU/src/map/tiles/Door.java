@@ -6,23 +6,68 @@
 package map.tiles;
 
 import org.newdawn.slick.Color;
+import util.RegisteredEntity;
 
 /**
  *
  * @author Kosmic
  */
-public class Door extends TileDestruct{
-    
-    private double openSpeed;
-    
-    public Door(String id, double speed, double maxHP, double hp, int bLevel, boolean opaque, boolean solid, Color color, Tile deathTile) {
-        
-        super(id, speed, maxHP, hp, bLevel, opaque, solid, color, deathTile);
+public class Door extends TileDestruct implements Interact {
+
+    protected double openSpeed;
+    protected boolean open;
+    protected Color openColor;
+
+    public Door(String id, double speed, double maxHP, double openSpeed, int bLevel, boolean opaque, Color openColor, Color closedColor, Tile deathTile) {
+
+        super(id, speed, maxHP, bLevel, opaque, closedColor, deathTile);
+        this.openSpeed = openSpeed;
+        this.open = false;
+        this.openColor = openColor;
     }
-    
-    public Door(String id, double speed, double maxHP, int bLevel, boolean opaque, boolean solid, Color color, Tile deathTile) {
-        
-        super(id, speed, maxHP, bLevel, opaque, solid, color, deathTile);
+
+    @Override
+    public Color getColor() {
+
+        return open ? openColor : color;
     }
-    
+
+    @Override
+    public void interact(RegisteredEntity re) {
+
+        open = !open;
+
+        if (open) {
+
+            speed = openSpeed;
+        } else {
+
+            speed = 0;
+        }
+    }
+
+    public double getOpenSpeed() {
+
+        return openSpeed;
+    }
+
+    public boolean isOpen() {
+
+        return open;
+    }
+
+    public Color getOpenColor() {
+
+        return openColor;
+    }
+
+    public Color getClosedColor() {
+
+        return color;
+    }
+
+    public void open(boolean open) {
+        
+        this.open = open;
+    }
 }
