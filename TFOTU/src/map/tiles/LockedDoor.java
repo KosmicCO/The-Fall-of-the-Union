@@ -41,7 +41,7 @@ public class LockedDoor extends Door implements Claimable{
     @Override
     public void interact(Entity entity) {
 
-        if (!locked || owners.contains(entity)) {
+        if (!locked || entity instanceof Owner && owners.contains((Owner) entity)) {
 
             super.interact(entity);
         }
