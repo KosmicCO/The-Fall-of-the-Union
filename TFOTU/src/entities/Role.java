@@ -6,7 +6,6 @@
 package entities;
 
 import citystate.Area;
-import util.Vec2;
 
 /**
  *

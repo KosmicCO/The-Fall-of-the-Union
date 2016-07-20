@@ -5,9 +5,6 @@
  */
 package entities;
 
-import citystate.Claim;
-import java.util.ArrayList;
-import java.util.List;
 import util.Vec2;
 
 /**
