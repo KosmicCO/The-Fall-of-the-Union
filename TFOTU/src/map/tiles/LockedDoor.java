@@ -5,7 +5,7 @@
  */
 package map.tiles;
 
-import game.globalInterfaces.Claimable;
+import game.interfaces.Claimable;
 import entities.Entity;
 import entities.Owner;
 import java.util.ArrayList;

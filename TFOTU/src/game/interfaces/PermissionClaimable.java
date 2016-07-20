@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game.globalInterfaces;
+package game.interfaces;
 
-import game.globalInterfaces.Claimable;
+import game.interfaces.Claimable;
 import entities.Owner;
 import java.util.Map;
 

@@ -5,7 +5,7 @@
  */
 package map.tiles;
 
-import game.globalInterfaces.Interact;
+import game.interfaces.Interact;
 import entities.Citizen;
 import entities.Entity;
 import org.newdawn.slick.Color;

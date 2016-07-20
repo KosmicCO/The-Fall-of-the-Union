@@ -5,7 +5,7 @@
  */
 package citystate;
 
-import game.globalInterfaces.PermissionClaimable;
+import game.interfaces.PermissionClaimable;
 import entities.Owner;
 import java.util.ArrayList;
 import java.util.HashMap;

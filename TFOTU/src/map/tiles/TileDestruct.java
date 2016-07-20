@@ -5,7 +5,7 @@
  */
 package map.tiles;
 
-import game.globalInterfaces.Health;
+import game.interfaces.Health;
 import org.newdawn.slick.Color;
 
 /**

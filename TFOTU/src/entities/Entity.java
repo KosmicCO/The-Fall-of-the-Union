@@ -5,7 +5,7 @@
  */
 package entities;
 
-import game.globalInterfaces.Health;
+import game.interfaces.Health;
 import java.util.ArrayList;
 import java.util.List;
 import util.Vec2;
