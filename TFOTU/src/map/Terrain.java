@@ -13,10 +13,10 @@ import map.tiles.Tile;
  */
 public class Terrain {
     
-    private Tile[][] map;
-    private int width;
-    private int height;
-    private long seed;
+    private final Tile[][] map;
+    private final int width;
+    private final int height;
+    private final long seed;
     
     public Terrain(Tile[][] map, long seed){
         

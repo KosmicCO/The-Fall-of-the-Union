@@ -13,10 +13,10 @@ import util.Vec2;
  */
 public class Territory {
     
-    private int[][] map;
-    private int width;
-    private int height;
-    private int seed;
+    private final int[][] map;
+    private final int width;
+    private final int height;
+    private final int seed;
     
     public Territory(int[][] map, int seed){
         

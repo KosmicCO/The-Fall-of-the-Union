@@ -18,7 +18,7 @@ public class Allegience {
     private static int nextID = -1;
     private static final List<Allegience> alList = new ArrayList();
     
-    private int id;
+    private final int id;
     private String name;
     private Color[] colors;
     

@@ -18,12 +18,12 @@ public class Area {
     public static final int MAX_SUB = 3;
 
     protected String name;
-    protected Vec2 pos;
-    protected Vec2 dim;
-    protected int subID;
-    protected Area parent;
-    protected List<Area> children;
-    protected boolean[][] childMap;
+    protected final Vec2 pos;
+    protected final Vec2 dim;
+    protected final int subID;
+    protected final Area parent;
+    protected final List<Area> children;
+    protected final boolean[][] childMap;
 
     public Area(String name, Vec2 pos, Vec2 dim) {
 
@@ -38,11 +38,13 @@ public class Area {
         this.parent = parent;
         children = new ArrayList();
         childMap = new boolean[(int) dim.x][(int) dim.y];
-        subID = 0;
 
         if (parent != null) {
 
             subID = parent.subID + 1;
+        }else{
+            
+            subID = 0;
         }
     }
 
