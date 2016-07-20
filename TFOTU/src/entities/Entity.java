@@ -5,13 +5,18 @@
  */
 package entities;
 
+import game.globalInterfaces.Health;
+import java.util.ArrayList;
+import java.util.List;
 import util.Vec2;
 
 /**
  *
  * @author Kosmic
  */
-public abstract class Entity {
+public abstract class Entity implements Health{
+    
+    protected static final List<Entity> entities = new ArrayList();
     
     protected Vec2 pos;
     protected double maxHP;
@@ -29,19 +34,42 @@ public abstract class Entity {
         return pos;
     }
 
+    @Override
     public double getMaxHP() {
         
         return maxHP;
     }
 
-    public double getHp() {
+    @Override
+    public double getHP() {
         
         return hp;
     }
 
-    public void setHp(double hp) {
+    @Override
+    public void setHP(double hp) {
         
         this.hp = hp;
+    }
+    
+    @Override
+     public double takeDamage(double damage){
+        
+        if(maxHP - hp < damage){
+            
+            damage = maxHP - hp;
+            hp = maxHP;
+            return damage;
+        }
+        
+        hp += damage;
+        
+        if(hp < 0){
+            
+            return damage - hp;
+        }
+        
+        return damage;
     }
     
     public abstract void destroy();

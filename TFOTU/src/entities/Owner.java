@@ -6,7 +6,7 @@
 package entities;
 
 import citystate.Allegience;
-import citystate.Claimable;
+import game.globalInterfaces.Claimable;
 import java.util.ArrayList;
 import java.util.List;
 import util.Vec2;

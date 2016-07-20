@@ -5,13 +5,14 @@
  */
 package map.tiles;
 
+import game.globalInterfaces.Health;
 import org.newdawn.slick.Color;
 
 /**
  *
  * @author Kosmic
  */
-public class TileDestruct extends Tile{
+public class TileDestruct extends Tile implements Health{
     
     protected double maxHP;
     protected double hp;
@@ -25,6 +26,7 @@ public class TileDestruct extends Tile{
         this.deathTile = deathTile;
     }
     
+    @Override
     public double takeDamage(double damage){
         
         if(maxHP - hp < damage){
@@ -44,17 +46,20 @@ public class TileDestruct extends Tile{
         return damage;
     }
 
+    @Override
     public void setHP(double hp) {
         
         this.hp = hp;
     }
 
+    @Override
     public double getMaxHP() {
         
         return maxHP;
     }
 
-    public double getHp() {
+    @Override
+    public double getHP() {
         
         return hp;
     }
