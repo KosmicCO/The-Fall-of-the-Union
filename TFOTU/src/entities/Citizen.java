@@ -6,26 +6,67 @@
 package entities;
 
 import citystate.Allegience;
-import util.RegisteredEntity;
+import citystate.Claimable;
+import java.util.ArrayList;
+import java.util.List;
+import util.Vec2;
 
 /**
  *
  * @author Kosmic
  */
-public class Citizen extends RegisteredEntity{
+public class Citizen extends Entity implements Owner{
 
-    private int gender; //0 undef, 1 male, 2 female
-    private Allegience alle;
+    protected int gender; //0 undef, 1 male, 2 female
+    protected Allegience alle;
+    protected List<Claimable> claims;
     
-    public Citizen(int gender, Allegience al){
+    public Citizen(Vec2 pos, int gender, Allegience al){
         
+        super(pos, 100);
         this.gender = gender;
         alle = al;
+        claims = new ArrayList();
+    }
+
+    public int getGender() {
+        
+        return gender;
+    }
+
+    public Allegience getAlle() {
+        
+        return alle;
+    }
+
+    public void setAlle(Allegience alle) {
+        
+        this.alle = alle;
     }
     
     @Override
-    protected void createInner() {
+    public void destroy() {
 
         
+    }
+
+    @Override
+    public void addClaim(Claimable claim) {
+
+        claims.add(claim);
+    }
+
+    @Override
+    public void removeClaim(Claimable claim) {
+
+        claims.remove(claim);
+    }
+
+    @Override
+    public List<Claimable> getClaimList() {
+
+        List<Claimable> copy = new ArrayList();
+        claims.forEach(o -> copy.add(o));
+        return copy;
     }
 }

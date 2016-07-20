@@ -3,15 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package map.tiles;
+package citystate;
 
-import entities.Entity;
+import entities.Owner;
+import java.util.List;
 
 /**
  *
  * @author Kosmic
  */
-public interface Interact {
+public interface Claimable {
     
-    public abstract void interact(Entity entity);//now just an entity
+    public void addOwner(Owner owner);
+    
+    public void removeOwner(Owner owner);
+    
+    public List<Owner> getOwnerList();
 }

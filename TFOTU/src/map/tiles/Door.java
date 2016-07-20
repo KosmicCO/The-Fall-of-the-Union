@@ -5,8 +5,8 @@
  */
 package map.tiles;
 
+import entities.Entity;
 import org.newdawn.slick.Color;
-import util.RegisteredEntity;
 
 /**
  *
@@ -33,7 +33,7 @@ public class Door extends TileDestruct implements Interact {
     }
 
     @Override
-    public void interact(RegisteredEntity re) {
+    public void interact(Entity entity) {
 
         open = !open;
 

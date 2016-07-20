@@ -52,4 +52,9 @@ public class Tile {
         
         return color;
     }
+    
+    public boolean isSolid(){
+        
+        return speed == 0;
+    }
 }

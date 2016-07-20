@@ -6,7 +6,7 @@
 package entities;
 
 import citystate.Area;
-import citystate.Territory;
+import util.Vec2;
 
 /**
  *
@@ -16,30 +16,31 @@ public abstract class Role {
     
     protected double wealth;
     protected Area workplace;
+    protected Area city;
     protected Citizen worker;
     
-    public Role(double wealth, Area workplace, Citizen worker){
+    public Role(double wealth, Area workplace /*area is found in the workplace claim*/, Citizen worker){
         
         this.wealth = wealth;
         this.workplace = workplace;
         this.worker = worker;
     }
     
-    public abstract void idleMove(); //probably can be an actual method with random node selection and path finding
+    public void idleMove(){
+        
+        //pick a place to go that is inside workplace bounds and use A* to get there
+    }
+    
+    public void errandMove(){
+        
+        //picks a place to go that is outside the workplace; this happens less often than idleMove
+    }
     
     public class Unimployed extends Role{
         
-        public static final int WANDER_RANGE = 20;
-        
         public Unimployed(double wealth, Citizen worker) {
             
-            super(wealth, new Area(/*general vicinity*/), worker);
-        }
-
-        @Override
-        public void idleMove() {
-
-            //moves to a random location int the area
+            super(wealth, null, worker);
         }
     }
 }
