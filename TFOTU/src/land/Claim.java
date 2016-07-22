@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citystate;
+package land;
 
 import game.interfaces.PermissionClaimable;
 import entities.Owner;

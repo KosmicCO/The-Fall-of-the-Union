@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citystate;
+package land;
 
+import entities.Government;
 import java.util.ArrayList;
 import java.util.List;
 import org.newdawn.slick.Color;
@@ -21,12 +22,14 @@ public class Allegience {
     private final int id;
     private String name;
     private Color[] colors;
+    private final Government association;
     
-    public Allegience(String name, Color[] colors){
+    public Allegience(String name, Color[] colors, Government assoc){
         
         id = ++nextID;
         this.name = name;
         this.colors = colors;
+        association = assoc;
     }
 
     public int getId() {

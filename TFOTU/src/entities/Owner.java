@@ -5,7 +5,7 @@
  */
 package entities;
 
-import citystate.Allegience;
+import land.Allegience;
 import game.interfaces.Claimable;
 import java.util.ArrayList;
 import java.util.List;

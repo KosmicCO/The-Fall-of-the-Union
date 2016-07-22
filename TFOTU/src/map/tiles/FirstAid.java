@@ -14,11 +14,11 @@ import org.newdawn.slick.Color;
  *
  * @author Kosmic
  */
-public class AidKiosk extends TileDestruct implements Interact{
+public class FirstAid extends TileDestruct implements Interact{
     
     private double remainingHP;
     
-    public AidKiosk(String id, double speed, double maxHP, int bLevel, boolean opaque, Color color, Tile deathTile) {
+    public FirstAid(String id, double speed, double maxHP, int bLevel, boolean opaque, Color color, Tile deathTile) {
         
         super(id, speed, maxHP, bLevel, opaque, color, deathTile);
         remainingHP = 200;

@@ -5,7 +5,7 @@
  */
 package entities;
 
-import citystate.Area;
+import land.Area;
 
 /**
  *
